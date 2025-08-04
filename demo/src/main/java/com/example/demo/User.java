@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 
 @Entity
-@Table(name = "app_user")  // <-- cambio aquí
+@Table(name = "login_log")  
 @Getter
 @Setter
 @NoArgsConstructor
