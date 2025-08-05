@@ -1,5 +1,10 @@
 package com.example.demo;
 
+import java.time.LocalDateTime;
+
+import org.hibernate.annotations.CreationTimestamp;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -21,13 +26,27 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
+    @CreationTimestamp
+    @Column(name = "login_time", columnDefinition = "TIMESTAMP")
+    private LocalDateTime loginTime;
 
-    private String username;
+    public LocalDateTime getLoginTime() {
+		return loginTime;
+	}
+
+	public void setLoginTime(LocalDateTime loginTime) {
+		this.loginTime = loginTime;
+	}
+
+	private String username;
 
     private String password;
 
+    @Column(name = "access_token", columnDefinition = "TEXT")
     private String accessToken;
 
+    @Column(name = "refresh_token", columnDefinition = "TEXT")
     private String refreshToken;
 
 	public User(Object object, String username2, String password2, Object object2, Object object3) {

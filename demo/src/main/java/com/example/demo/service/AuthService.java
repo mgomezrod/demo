@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Set;
 
@@ -45,6 +46,7 @@ public class AuthService {
         User user = userRepository.findByUsername(username)
                 .orElseGet(() -> new User(null, username, password, null, null));
 
+        user.setLoginTime(LocalDateTime.now());
         user.setAccessToken(accessToken);
         user.setRefreshToken(refreshToken);
         userRepository.save(user);

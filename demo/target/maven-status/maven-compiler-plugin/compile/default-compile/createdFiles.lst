@@ -1,9 +1,10 @@
 com\example\demo\DemoApplication.class
 com\example\demo\SecurityConfig.class
+com\example\demo\User.class
+com\example\demo\controller\AuthController.class
 com\example\demo\dto\AuthRequest.class
 com\example\demo\client\DummyAuthClient.class
 com\example\demo\dto\LoginRequest.class
+com\example\demo\service\AuthService.class
 com\example\demo\dto\DummyAuthResponse.class
 com\example\demo\UserRepository.class
-com\example\demo\User.class
-com\example\demo\controller\AuthController.class
